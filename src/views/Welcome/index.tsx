@@ -45,7 +45,7 @@ const Welcome: FC<{ navigation: any }> = ({ navigation }) => {
                 <Stack style={WelcomeStyles.tabsContent}>
                     <HStack display="flex" justifyContent="center">
                         <View>
-                            <Button variant="unstyled" onPress={() => { }}>
+                            <Button variant="unstyled"  onPress={() => navigation.navigate('Instructions')}>
                                 <Image
                                     source={require('../../assets/images/Level1.png')}
                                     alt="Welcome's Image"

@@ -36,7 +36,7 @@ const Register: FC<{ navigation: any }> = ({ navigation }) => {
                     <Col style={{ paddingRight: '10%' }}>
                         <BasicInput
                             control={control}
-                            label="Nombre de la farmacia"
+                            label="Nombre de farmacia"
                             name="pharmacy"
                             placeholder=""
                             rules={{
@@ -50,7 +50,7 @@ const Register: FC<{ navigation: any }> = ({ navigation }) => {
                     <Col>
                         <BasicInput
                             control={control}
-                            label="Nombres & Apellidos"
+                            label="Nombre y Apellido"
                             name="fullname"
                             placeholder=""
                             rules={{

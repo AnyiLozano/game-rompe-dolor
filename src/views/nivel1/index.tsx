@@ -3,9 +3,9 @@ import React, { FC } from "react";
 import useComponents from "../../components";
 import useControllers from "../../controllers";
 import { IGeneralProps } from "../../models/interfaces/general";
-import InstructionsStyles from './instructions.styles';
+import Nivel1Styles from './nivel1.style';
 
-const Levels: FC<IGeneralProps> = (props) => {
+const Nivel1: FC<IGeneralProps> = (props) => {
     const redirect = (): void => {
         navigation.navigate('Home');
     }
@@ -28,27 +28,23 @@ const Levels: FC<IGeneralProps> = (props) => {
     return (
         <React.Fragment>
             <Image
-                source={require('../../assets/images/politicas.png')}
+                source={require('../../assets/images/juego.png')}
                 alt="Welcome's Background"
                 style={{ width: "100%", flex: 1, resizeMode: 'stretch' }}
             />
-            <View style={InstructionsStyles.view}>
-                <View style={InstructionsStyles.subContent}>
-                    <Button variant="unstyled" onPress={() => navigation.navigate('Conteo')}>
+            {/* <View style={Nivel1Styles.view}>
+                <View style={Nivel1Styles.subContent}>
+                    <Button variant="unstyled" onPress={() => navigation.navigate('Instructions3')}>
                         <Image
-                            source={require('../../assets/images/GroupLI.png')}
-                            alt="Welcome's Background"
-                            style={{}}
+                            source={require('../../assets/images/Instructions2.png')}
+                            alt="Intructions' Image"
                         />
                     </Button>
-                    <Center style={InstructionsStyles.title}>
-                        <Text>Soy Levels</Text>
-                    </Center>
                 </View>
-            </View>
-            <Navigation navigation={navigation} />
+            </View> */}
+            <Navigation navigation={navigation}  />
         </React.Fragment>
     );
 }
 
-export default Levels;
+export default Nivel1;

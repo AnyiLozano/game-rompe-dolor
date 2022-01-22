@@ -2,7 +2,7 @@ import { Dispatch } from "redux";
 import { IActionLogin } from "../../../models/interfaces/login";
 import useServices from "../../services";
 import { LOGIN } from '../../../types';
-import { ICallback } from "models/interfaces/general";
+import { ICallback } from "../../../models/interfaces/general";
 
 const useLoginActions = () => {
     // Services
@@ -23,7 +23,7 @@ const useLoginActions = () => {
 
             onSuccess && onSuccess();
         } catch (error) {
-            onError && onError();
+            onError && onError(error);
         }
     }
 

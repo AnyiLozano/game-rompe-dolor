@@ -5,7 +5,7 @@ import useControllers from "../../controllers";
 import { IGeneralProps } from "../../models/interfaces/general";
 import InstructionsStyles from './instructions.styles';
 
-const Levels: FC<IGeneralProps> = (props) => {
+const Referencias: FC<IGeneralProps> = (props) => {
     const redirect = (): void => {
         navigation.navigate('Home');
     }
@@ -34,21 +34,17 @@ const Levels: FC<IGeneralProps> = (props) => {
             />
             <View style={InstructionsStyles.view}>
                 <View style={InstructionsStyles.subContent}>
-                    <Button variant="unstyled" onPress={() => navigation.navigate('Conteo')}>
+                    <Button variant="unstyled" onPress={() => navigation.navigate('Welcome')}>
                         <Image
-                            source={require('../../assets/images/GroupLI.png')}
-                            alt="Welcome's Background"
-                            style={{}}
+                            source={require('../../assets/images/refe2.png')}
+                            alt="Intructions' Image"
                         />
                     </Button>
-                    <Center style={InstructionsStyles.title}>
-                        <Text>Soy Levels</Text>
-                    </Center>
                 </View>
             </View>
-            <Navigation navigation={navigation} />
+            <Navigation navigation={navigation} page="Referencias" />
         </React.Fragment>
     );
 }
 
-export default Levels;
+export default Referencias;

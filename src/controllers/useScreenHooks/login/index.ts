@@ -18,7 +18,9 @@ const useLogin = (navigation: any) => {
         console.log(data)
         const request : IActionLogin = {
             fullname: data.fullname,
-            onError: () => {},
+            onError: (error: any) => {
+                console.error(error)
+            },
             onSuccess: () => {
                 reset({
                     fullname: ""

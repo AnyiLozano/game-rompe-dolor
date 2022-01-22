@@ -41,7 +41,7 @@ const Instructions: FC<IGeneralProps> = (props) => {
                     />
                     <Center style={InstructionsStyles.title}>
                         <Text style={InstructionsStyles.title_text}>¡Hola {user.fullname}!</Text>
-                        <Text style={InstructionsStyles.description}>Nos alegra mucho tu llegada, pues gracias a tu destreza y habilidad podremos vencer el dolor. </Text>
+                        <Text style={InstructionsStyles.description}>Nos alegra mucho tu llegada, pues gracias a tu destreza y habilidad, juntos podremos vencer el dolor. </Text>
                         <Button style={InstructionsStyles.button} variant="unstyled" onPress={() => navigation.navigate('Instructions2')}>
                             <Text style={InstructionsStyles.buttonText}>{"Continuar >"}</Text>
                         </Button>

@@ -20,7 +20,11 @@ const Routes = () => {
         Instructions4,
         Instructions5,
         Levels,
-        Settings
+        Settings,
+        Referencias,
+        Conteo,
+        Vamos,
+        Nivel1
         
     } = useViews();
 
@@ -77,6 +81,22 @@ const Routes = () => {
         {
             name: "Settings",
             component: Settings
+        },
+        {
+            name: "Referencias",
+            component: Referencias
+        },
+        {
+            name: "Conteo",
+            component: Conteo
+        },
+        {
+            name: "Vamos",
+            component: Vamos
+        },
+        {
+            name: "Nivel1",
+            component: Nivel1
         },
     ]
 

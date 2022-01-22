@@ -13,6 +13,10 @@ const Instructions4 = lazy(() => import('./Instructions4'));
 const Instructions5 = lazy(() => import('./Instructions5')); 
 const Levels = lazy(() => import('./Levels')); 
 const Settings = lazy(() => import('./settings')); 
+const Referencias = lazy(() => import('./referencias')); 
+const Conteo = lazy(() => import('./conteo')); 
+const Vamos = lazy(() => import('./vamos')); 
+const Nivel1 = lazy(() => import('./nivel1')); 
 
 const useViews = () => {
     return {
@@ -27,7 +31,11 @@ const useViews = () => {
         Instructions4,
         Instructions5,
         Levels,
-        Settings
+        Settings,
+        Referencias,
+        Conteo,
+        Vamos,
+        Nivel1
     };
 };
 

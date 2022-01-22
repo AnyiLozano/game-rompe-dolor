@@ -39,7 +39,7 @@ const Login: FC<{ navigation: any }> = ({ navigation }) => {
                 <Col style={LoginStyles.containerInput}>
                     <BasicInput
                         control={control}
-                        label="Nombres Completos"
+                        label="Nombre y Apellido"
                         name="fullname"
                         placeholder=""
                         rules={{}}

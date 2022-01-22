@@ -86,6 +86,28 @@ const Navigation: FC<INavigationProps> = (props) => {
                                         alt="Instructions's Icon"
                                     />
                                 </Button>
+                                
+                            )
+                        }
+
+                    </View>
+                    <View style={{ paddingHorizontal: '3%' }}>
+                        {
+                            page && page === "Referencias" ? (
+                                <Button onPress={() => navigation.navigate('Referencias')} variant="unstyled">
+                                    <Image
+                                        source={require('../../assets/images/refe1.png')}
+                                        alt="Referencias's Icon"
+                                    />
+                                </Button>
+                            ) : (
+                                <Button onPress={() => navigation.navigate('Referencias')} variant="unstyled">
+                                    <Image
+                                        source={require('../../assets/images/referencia.png')}
+                                        alt="Referencias's Icon"
+                                    />
+                                </Button>
+                                
                             )
                         }
 
