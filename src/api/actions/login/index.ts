@@ -1,5 +1,5 @@
 import { Dispatch } from "redux";
-import { IActionLogin } from "../../../models/interfaces/login";
+import { IActionLogin, ILogout } from "../../../models/interfaces/login";
 import useServices from "../../services";
 import { LOGIN } from '../../../types';
 import { ICallback } from "../../../models/interfaces/general";
@@ -9,32 +9,44 @@ const useLoginActions = () => {
     const { useLoginServices } = useServices();
     const { loginServices } = useLoginServices();
 
-    // Actions 
+    /** Actions */
+    /**
+     * This function is used for login the end user.
+     * @param IActionLogin request, with the data from login the end user
+     * @returns void.
+     */
     const actLogin = (request: IActionLogin) => async(dispatch: Dispatch) => {
-        const { fullname, onError, onSuccess } = request;
+        const { user, onSuccess, onError } = request;
         try {
-            const res = await loginServices(fullname);
-            const { data } = res.data;
+            const res = await loginServices(user);
+            const { transaction, data, message } = res.data;
+            
+            if(transaction.status === true){
+                data.fullname = user.fullname;
 
-            dispatch({
-                type: LOGIN,
-                payload: data
-            });
+                dispatch({
+                    type: LOGIN,
+                    payload: data
+                });
 
-            onSuccess && onSuccess();
+                onSuccess && onSuccess();
+            }else{
+                onError && onError(message.content);
+            }
         } catch (error) {
             onError && onError(error);
         }
     }
 
-    const actLogout = (request: ICallback) => async(dispatch: Dispatch) => {
-        const { onError, onSuccess } = request;
+    const actLogout = (request: ILogout) => async(dispatch: Dispatch) => {
+        const { onError, onSuccess, fullname } = request;
         try {
             dispatch({
                 type: LOGIN,
                 payload: {
                     token: "",
-                    user: {}
+                    user: {},
+                    fullname: fullname
                 }
             });
 

@@ -1,5 +1,4 @@
-import useControllers from "../../controllers";
-import { Button, Center, HStack, Image, Stack, Text, View } from "native-base";
+import { Button, HStack, Image, Stack, View } from "native-base";
 import React, { FC, useCallback, useEffect } from "react";
 import useComponents from '../../components/index';
 import VamosStyles from "./vamos.style";
@@ -9,7 +8,7 @@ const Vamos: FC<{ navigation: any }> = ({ navigation }) => {
     const handleConteo = useCallback(() => {
         setTimeout(() => {
             console.log("Hola Como Estan?")
-            navigation.navigate("Nivel1");
+            navigation.navigate("Level1");
         }, 1000);
     }, []);
 
@@ -42,7 +41,7 @@ const Vamos: FC<{ navigation: any }> = ({ navigation }) => {
                     </HStack>
                 </Stack>
             </View>
-            <Navigation navigation={navigation}/>
+            <Navigation/>
         </React.Fragment>
     );
 }

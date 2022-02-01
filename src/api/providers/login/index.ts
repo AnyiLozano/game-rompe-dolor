@@ -1,12 +1,8 @@
-import axios from "axios";
+import axios, { AxiosResponse } from "axios";
+import { ILoginData } from "../../../models/interfaces/login";
 
 const useLoginProviders = () => {
-    const login = (fullname: string) : Promise<any> => {
-        return axios.post('/auth/login', {
-            fullname: fullname,
-            password: "password"
-        })
-    }
+    const login = (data: ILoginData) : Promise<AxiosResponse> => axios.post('/auth/login', data);
 
     return {
         login

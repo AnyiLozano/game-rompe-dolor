@@ -20,10 +20,10 @@ const Instructions5: FC<IGeneralProps> = (props) => {
     const { Navigation } = useComponents();
 
     // Controller
-    const { useScreenHooks } = useControllers();
-    const { useWelcome } = useScreenHooks();
-    const { login, handleLogout } = useWelcome(redirect, redirectLogin);
-    const { user } = login;
+    // const { useScreenHooks } = useControllers();
+    // const { useWelcome } = useScreenHooks();
+    // const { login, handleLogout } = useWelcome(redirect, redirectLogin);
+    // const { user } = login;
 
     return (
         <React.Fragment>

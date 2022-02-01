@@ -2,24 +2,19 @@ import { Button, HStack, Image, Stack, Text, View } from "native-base";
 import React, { FC } from "react";
 import useControllers from "../../controllers";
 import { INavigationProps } from "../../models/interfaces/components/Navigation";
+import HomeButtons from "./components/Home";
+import InstructionsButtons from "./components/InstructionsButtons";
+import ReferencesButtons from "./components/References";
+import SettingsButtons from "./components/Settings";
 import NavigationStyles from './navigation.style';
 
 const Navigation: FC<INavigationProps> = (props) => {
-    const { navigation, page } = props;
+    const { page } = props;
 
-    const redirect = (): void => {
-        navigation.navigate('Home');
-    }
-
-    const redirectLogin = (): void => {
-        navigation.navigate('Login');
-    }
-
-    // Controller
+    /** Controllers */
     const { useScreenHooks } = useControllers();
     const { useWelcome } = useScreenHooks();
-    const { login, logout } = useWelcome(redirect, redirectLogin);
-    const { user } = login;
+    const { user, logout } = useWelcome();
 
     return (
         <Stack style={NavigationStyles.View2}>
@@ -33,87 +28,17 @@ const Navigation: FC<INavigationProps> = (props) => {
                 </HStack>
                 <HStack style={[NavigationStyles.center, NavigationStyles.col2, { paddingLeft: '8%' }]} justifyContent="center">
                     <View style={{ paddingHorizontal: '5%' }}>
-                        {
-                            page && page === "settings" ? (
-                                <Button onPress={() => navigation.navigate('Settings')} variant="unstyled">
-                                    <Image
-                                        source={require('../../assets/images/SelectedSettings.png')}
-                                        alt="Instructions's Icon"
-                                    />
-                                </Button>
-                            ) : (
-                                <Button onPress={() => navigation.navigate('Settings')} variant="unstyled">
-                                    <Image
-                                        source={require('../../assets/images/settings.png')}
-                                        alt="Instructions's Icon"
-                                    />
-                                </Button>
-                            )
-                        }
+                        <SettingsButtons isSelected={page && page === "settings" ? true : false}/>
                     </View>
                     <View style={{ paddingHorizontal: '5%' }}>
-                        {
-                            page && page === "home" ? (
-                                <Button onPress={() => navigation.navigate('Welcome')} variant="unstyled">
-                                    <Image
-                                        source={require('../../assets/images/SelectedHome.png')}
-                                        alt="Instructions's Icon"
-                                    />
-                                </Button>
-                            ) : (
-                                <Button onPress={() => navigation.navigate('Welcome')} variant="unstyled">
-                                    <Image
-                                        source={require('../../assets/images/HomeIcon.png')}
-                                        alt="Instructions's Icon"
-                                    />
-                                </Button>
-                            )
-                        }
+                        <HomeButtons isSelected={page && page === "home" ? true : false}/>
                     </View>
                     <View style={{ paddingHorizontal: '5%' }}>
-                        {
-                            page && page === "instructions" ? (
-                                <Button onPress={() => navigation.navigate('Instructions')} variant="unstyled">
-                                    <Image
-                                        source={require('../../assets/images/SelectedIntructions.png')}
-                                        alt="Instructions's Icon"
-                                    />
-                                </Button>
-                            ) : (
-                                <Button onPress={() => navigation.navigate('Instructions')} variant="unstyled">
-                                    <Image
-                                        source={require('../../assets/images/instructions.png')}
-                                        alt="Instructions's Icon"
-                                    />
-                                </Button>
-                                
-                            )
-                        }
-
+                        <InstructionsButtons isSelected={page && page === "instructions" ? true : false}/>
                     </View>
                     <View style={{ paddingHorizontal: '3%' }}>
-                        {
-                            page && page === "Referencias" ? (
-                                <Button onPress={() => navigation.navigate('Referencias')} variant="unstyled">
-                                    <Image
-                                        source={require('../../assets/images/refe1.png')}
-                                        alt="Referencias's Icon"
-                                    />
-                                </Button>
-                            ) : (
-                                <Button onPress={() => navigation.navigate('Referencias')} variant="unstyled">
-                                    <Image
-                                        source={require('../../assets/images/referencia.png')}
-                                        alt="Referencias's Icon"
-                                    />
-                                </Button>
-                                
-                            )
-                        }
-
+                        <ReferencesButtons isSelected={page && page === "references" ? true : false}/>
                     </View>
-
-
                 </HStack>
                 <HStack style={[NavigationStyles.center, NavigationStyles.col3]} justifyContent="center">
                     <Button onPress={logout} variant="unstyled">
