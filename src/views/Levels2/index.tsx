@@ -42,7 +42,6 @@ const Levels: FC<IGeneralProps> = (props) => {
                         />
                     </Button>
                     <Center style={Leves2Styles.title}>
-                        <Text>Soy Levels</Text>
                     </Center>
                 </View>
             </View>

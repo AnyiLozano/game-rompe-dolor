@@ -42,7 +42,7 @@ const Levels: FC<IGeneralProps> = (props) => {
                         />
                     </Button>
                     <Center style={InstructionsStyles.title}>
-                        <Text>Soy Levels</Text>
+                       
                     </Center>
                 </View>
             </View>

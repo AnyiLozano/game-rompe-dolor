@@ -1,7 +1,7 @@
 import {Image, View} from 'native-base';
 import React, {FC} from 'react';
 
-const Alert: FC<{number: number; style?: any; onPress: any}> = ({
+const Alert3: FC<{number: number; style?: any; onPress: any}> = ({
   number,
   style,
   onPress,
@@ -16,7 +16,7 @@ const Alert: FC<{number: number; style?: any; onPress: any}> = ({
           style={style}
           >
           <Image
-            source={require('../../assets/images/AlertMorado1.png')}
+            source={require('../../assets/images/alertacafe12.png')}
             alt="Red Capsule"
             width={'100%'}
             height={'100%'}
@@ -30,7 +30,7 @@ const Alert: FC<{number: number; style?: any; onPress: any}> = ({
           style={style}
           >
           <Image
-            source={require('../../assets/images/AlertGreen1.png')}
+            source={require('../../assets/images/alertanaranja11.png')}
             alt="Yellow Capsule"
             width={'100%'}
             height={'100%'}
@@ -43,7 +43,7 @@ const Alert: FC<{number: number; style?: any; onPress: any}> = ({
           onResponderStart={onPress}
           style={style}>
           <Image
-            source={require('../../assets/images/AlertBlue1.png')}
+            source={require('../../assets/images/alertaverde1.png')}
             alt="Red Capsule"
             width={'100%'}
             height={'100%'}
@@ -57,7 +57,7 @@ const Alert: FC<{number: number; style?: any; onPress: any}> = ({
           style={style}
           >
           <Image
-            source={require('../../assets/images/CoffeeAlertLevel3.png')}
+            source={require('../../assets/images/alertarosado1.png')}
             alt="Yellow Capsule"
             width={'100%'}
             height={'100%'}
@@ -71,7 +71,7 @@ const Alert: FC<{number: number; style?: any; onPress: any}> = ({
           style={style}
           >
           <Image
-            source={require('../../assets/images/AlertRed3.png')}
+            source={require('../../assets/images/alertacafe1.png')}
             alt="Red Capsule"
             width={'100%'}
             height={'100%'}
@@ -86,7 +86,7 @@ const Alert: FC<{number: number; style?: any; onPress: any}> = ({
           style={style}
           >
           <Image
-            source={require('../../assets/images/AlertGreen.png')}
+            source={require('../../assets/images/alertanaranja1.png')}
             alt="Red Capsule"
             width={'100%'}
             height={'100%'}
@@ -100,7 +100,7 @@ const Alert: FC<{number: number; style?: any; onPress: any}> = ({
           style={style}
           >
           <Image
-            source={require('../../assets/images/AlertMorado.png')}
+            source={require('../../assets/images/alertaverde.png')}
             alt="Yellow Capsule"
             width={'100%'}
             height={'100%'}
@@ -114,7 +114,7 @@ const Alert: FC<{number: number; style?: any; onPress: any}> = ({
           style={style}
           >
           <Image
-            source={require('../../assets/images/AlertBlue.png')}
+            source={require('../../assets/images/alertarosado.png')}
             alt="Red Capsule"
             width={'100%'}
             height={'100%'}
@@ -128,7 +128,7 @@ const Alert: FC<{number: number; style?: any; onPress: any}> = ({
           style={style}
           >
           <Image
-            source={require('../../assets/images/AlertaYellow1.png')}
+            source={require('../../assets/images/alertanaranja.png')}
             alt="Yellow Capsule"
             width={'100%'}
             height={'100%'}
@@ -142,7 +142,7 @@ const Alert: FC<{number: number; style?: any; onPress: any}> = ({
           style={style}
           >
           <Image
-            source={require('../../assets/images/CoffeeAlertLevel3.png')}
+            source={require('../../assets/images/Alertacafe.png')}
             alt="Red Capsule"
             width={'100%'}
             height={'100%'}
@@ -153,4 +153,4 @@ const Alert: FC<{number: number; style?: any; onPress: any}> = ({
   );
 };
 
-export default Alert;
+export default Alert3;

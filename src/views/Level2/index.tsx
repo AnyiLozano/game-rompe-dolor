@@ -214,7 +214,6 @@ const Level2 = () => {
       resizeMode="stretch"
       source={require('../../assets/images/politicas.png')}
       style={Level2Styles.background}>
-      
       <Image
         source={require('../../assets/images/Headerlevel2.png')}
         alt="Header Level 1"

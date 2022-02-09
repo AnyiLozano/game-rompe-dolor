@@ -57,7 +57,7 @@ const Alert: FC<{number: number; style?: any; onPress: any}> = ({
           style={style}
           >
           <Image
-            source={require('../../assets/images/AlertYellow2.png')}
+            source={require('../../assets/images/AlertYellow22.png')}
             alt="Yellow Capsule"
             width={'100%'}
             height={'100%'}

@@ -8,9 +8,10 @@ import FelicitacionesintentarStyles from './felicitacionesintentar.styles';
 const Felicitacionesintentar: FC<IGeneralProps> = props => {
   /** Controllers */
   const {useScreenHooks} = useControllers();
-  const {useCongratulations} = useScreenHooks();
+  const {useCongratulations, useWelcome} = useScreenHooks();
   const {useCongratulationsLevel1} = useCongratulations();
-  const {setLevel, navigation, level} = useCongratulationsLevel1();
+  const {navigation, level} = useCongratulationsLevel1();
+  const { setLevel } = useWelcome();
 
   console.log(level);
 
@@ -19,7 +20,10 @@ const Felicitacionesintentar: FC<IGeneralProps> = props => {
 
   /** Effects */
   useEffect(() => {
-    setLevel();
+    setLevel(level === 1
+                ? 1
+                : level === 2
+                  ? 2 : 3);
   }, [setLevel]);
 
   return (
@@ -34,10 +38,24 @@ const Felicitacionesintentar: FC<IGeneralProps> = props => {
           <Button
             variant="unstyled"
             onPress={() => navigation.navigate('Welcome')}>
-            <Image
-              source={require('../../assets/images/intentar.png')}
+            {
+              level === 1 ? (
+                <Image
+              source={require('../../assets/images/Felicidades.png')}
               alt="Intructions' Image"
             />
+              ) : level === 2 ? (
+                <Image
+              source={require('../../assets/images/Felicidades.png')}
+              alt="Intructions' Image"
+            />
+              ) : (
+                <Image
+              source={require('../../assets/images/felicicalificacion.png')}
+              alt="Intructions' Image"
+            />
+              )
+            }
             <Button
               variant="unstyled"
               style={{
@@ -46,7 +64,6 @@ const Felicitacionesintentar: FC<IGeneralProps> = props => {
                 height: 33,
                 bottom: '27.3%',
                 left: '36.3%',
-                backgroundColor: 'blue',
               }}
               onPress={() =>
                 navigation.navigate(
@@ -58,7 +75,6 @@ const Felicitacionesintentar: FC<IGeneralProps> = props => {
               style={{
                 position: 'absolute',
                 width: 150,
-                backgroundColor: 'blue',
                 height: 33,
                 bottom: '17.3%',
                 left: '36.3%',

@@ -7,15 +7,18 @@ type IScreens = {
     Instructions: undefined;
     References: undefined;
     Felicitacionesintentar: {
-        level: number
+        level: number;
     };
     Gameover: {
-        level: number
+        level: number;
     };
     Levels: undefined;
     Levels2: undefined;
     Levels3: undefined;
     Calificanos: undefined;
+    AlertCalificacion: undefined;
+    AlertCalificacion2: undefined;
+    AlertCalificacion3: undefined;
 }
 
 export type IUseNavigation = NativeStackNavigationProp<IScreens, "Welcome">

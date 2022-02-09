@@ -155,16 +155,17 @@ const Level1 = () => {
             source={require('../../assets/images/RosaActivo.png')}
             style={{
               position: 'absolute',
+              top: '30%',
+              left: '25%',
+              zIndex: 1,
               transform: [
                 {
                   translateY: topInitialPurple.interpolate({
                     inputRange: [0, 1],
-                    outputRange: [50, colorTop],
+                    outputRange: [15, colorTop],
                   }),
                 },
               ],
-              left: '25%',
-              zIndex: 1,
               height: '50%',
               width: '50%',
             }}
@@ -175,16 +176,17 @@ const Level1 = () => {
             source={require('../../assets/images/GreenActivo.png')}
             style={{
               position: 'absolute',
+              top: '30%',
+              left: '25%',
+              zIndex: 1,
               transform: [
                 {
                   translateY: topInitialGreen.interpolate({
                     inputRange: [0, 1],
-                    outputRange: [50, colorTop],
+                    outputRange: [15, colorTop],
                   }),
                 },
               ],
-              left: '25%',
-              zIndex: 1,
               height: '50%',
               width: '50%',
             }}

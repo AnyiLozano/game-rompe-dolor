@@ -1,6 +1,6 @@
 import { useNavigation } from '@react-navigation/native';
 import _ from 'lodash';
-import {useRef, useState} from 'react';
+import {useEffect, useRef, useState} from 'react';
 import {Animated} from 'react-native';
 import { IUseNavigation } from '../../../models/interfaces/routes';
 import { capsuleToShooting, Level1 } from './LevelsOrder/Level3';
@@ -46,7 +46,7 @@ const useGame2 = () => {
     _.map(capsul, (item: any) => {
       if (item.length > 0) {
         _.map(item, (itm: any) => {
-          if (itm.color === colorGun) {
+          if (itm.color === colorGun && itm.visible) {
             setTime(time + 1);
             status = itm.state;
             setColorTop(itm.top);
@@ -96,15 +96,13 @@ const useGame2 = () => {
     let newCapsules: any[] = [];
     _.map(capsules, (item: any) => {
       _.map(item, (itm: any) => {
-        if (itm.state === status) {
+        if (itm.state === status && itm.visible === true) {
           itm.visible = false;
         }
       });
 
       newCapsules.push(item);
     });
-
-    console.log(newCapsules)
 
     /** We Delete The First Data And Select The New First Row In The Array */
     let cap = capsule.slice(1);
@@ -142,6 +140,20 @@ const useGame2 = () => {
       }
     }
   };
+  
+  useEffect(() => {
+    let newCapsules : any = []
+    _.map(capsules, (item: any) => {
+      _.map(item, (itm: any) => {
+        if(itm.state > 0){
+          itm.visible = true;
+        }
+      })
+
+      newCapsules.push(item);
+    })
+    setCapsules(newCapsules)
+  }, [])
 
   return {
     capsules,

@@ -1,5 +1,6 @@
 import { Alert, Box, Button, Center, CloseIcon, HStack, IconButton, Image, InputLeftAddon, Row, SimpleGrid, Stack, Text, View, VStack, ScrollView } from 'native-base';
 import React, { FC } from "react";
+import { Dimensions } from 'react-native';
 import { Col, Grid } from "react-native-easy-grid";
 import useComponents from '../../components';
 import useControllers from '../../controllers';
@@ -27,7 +28,7 @@ const Register: FC<{ navigation: any }> = ({ navigation }) => {
 
     return (
         <ScrollView>
-            <Image source={require('../../assets/images/Group.png')} style={{ width: "100%", flex: 1, resizeMode: 'stretch' }} alt="register" />
+            <Image source={require('../../assets/images/Group.png')} style={{ width: "100%", height: Dimensions.get('screen').height * 0.915, flex: 1, resizeMode: 'stretch' }} alt="register" />
             <View style={RegisterStyles.view}>
                 <Center style={RegisterStyles.title}>
                     <Text style={RegisterStyles.title_text}>Registrarse</Text>
@@ -70,10 +71,7 @@ const Register: FC<{ navigation: any }> = ({ navigation }) => {
                             name="phone"
                             placeholder=""
                             rules={{
-                                required: {
-                                    value: true,
-                                    message: "El campo es requerido"
-                                }
+                                
                             }}
                         />
                     </Col>

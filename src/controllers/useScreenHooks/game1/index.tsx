@@ -1,6 +1,6 @@
 import { useNavigation } from '@react-navigation/native';
 import _ from 'lodash';
-import {useRef, useState} from 'react';
+import {useEffect, useRef, useState} from 'react';
 import {Animated} from 'react-native';
 import { IUseNavigation } from '../../../models/interfaces/routes';
 import { capsuleToShooting, Level1 } from './LevelsOrder';
@@ -35,8 +35,10 @@ const useGame1 = () => {
     /** We Search The Object By Color And Angles Of Gun */
     const capsul = capsules.map((item: any) => {
       return item.filter((itm: any) => {
-        if (itm.color === colorGun) {
-          return angleT >= itm.angle[0] && angleT <= itm.angle[1];
+        if (itm.color === colorGun ) {
+          if(itm.visible === true){
+            return angleT >= itm.angle[0] && angleT <= itm.angle[1];
+          }
         }
       });
     });
@@ -47,9 +49,11 @@ const useGame1 = () => {
       if (item.length > 0) {
         _.map(item, (itm: any) => {
           if (itm.color === colorGun) {
-            setTime(time + 1);
-            status = itm.state;
-            setColorTop(itm.top);
+            if(itm.visible === true){
+              setTime(time + 1);
+              status = itm.state;
+              setColorTop(itm.top);
+            }
           }
         });
       }
@@ -96,7 +100,7 @@ const useGame1 = () => {
     let newCapsules: any[] = [];
     _.map(capsules, (item: any) => {
       _.map(item, (itm: any) => {
-        if (itm.state === status) {
+        if (itm.state === status && itm.visible) {
           itm.visible = false;
         }
       });
@@ -104,7 +108,6 @@ const useGame1 = () => {
       newCapsules.push(item);
     });
 
-    console.log(newCapsules)
 
     /** We Delete The First Data And Select The New First Row In The Array */
     let cap = capsule.slice(1);
@@ -143,6 +146,20 @@ const useGame1 = () => {
       }
     }
   };
+
+  useEffect(() => {
+    let newCapsules : any = []
+    _.map(capsules, (item: any) => {
+      _.map(item, (itm: any) => {
+        if(itm.state > 0){
+          itm.visible = true;
+        }
+      })
+
+      newCapsules.push(item);
+    })
+    setCapsules(newCapsules)
+  }, [])
 
   return {
     capsules,

@@ -3,17 +3,14 @@ import {Button, Center, HStack, Image, Stack, Text, View} from 'native-base';
 import React, {FC} from 'react';
 import WelcomeStyles from './welcome.style';
 import useComponents from '../../components/index';
-import { useNavigation } from '@react-navigation/native';
-import { IUseNavigation } from '../../models/interfaces/routes';
+import {useNavigation} from '@react-navigation/native';
+import {IUseNavigation} from '../../models/interfaces/routes';
 
 const Welcome: FC = () => {
-  /** Navigation */
-  const navigation = useNavigation<IUseNavigation>();
-
   /** Controllers */
   const {useScreenHooks} = useControllers();
   const {useWelcome} = useScreenHooks();
-  const { level2, level3} = useWelcome();
+  const {level2, level3, navigation} = useWelcome();
 
   /** Components */
   const {Navigation} = useComponents();
@@ -51,34 +48,44 @@ const Welcome: FC = () => {
               </Button>
             </View>
             <View>
-              <Button variant="unstyled" onPress={() => level2 && navigation.navigate("Levels2")}>
-                {level2 ? (
+              {level2 && (
+                <Button
+                  variant="unstyled"
+                  onPress={() => level2 && navigation.navigate('Levels2')}>
                   <Image
                     source={require('../../assets/images/UnlockedLevel2.png')}
                     alt="Welcome's Image"
                   />
-                ) : (
+                </Button>
+              )}
+              {!level2 && (
+                <Button variant="unstyled">
                   <Image
                     source={require('../../assets/images/Level2.png')}
                     alt="Welcome's Image"
                   />
-                )}
-              </Button>
+                </Button>
+              )}
             </View>
             <View>
-              <Button variant="unstyled" onPress={() => level2 && navigation.navigate("Levels3")}>
-                {level3 ? (
+              {level3 && (
+                <Button
+                  variant="unstyled"
+                  onPress={() => level2 && navigation.navigate('Levels3')}>
                   <Image
                     source={require('../../assets/images/UnlockedLevel3.png')}
                     alt="Welcome's Image"
                   />
-                ) : (
+                </Button>
+              )}
+              {!level3 && (
+                <Button variant="unstyled">
                   <Image
                     source={require('../../assets/images/Level3.png')}
                     alt="Welcome's Image"
                   />
-                )}
-              </Button>
+                </Button>
+              )}
             </View>
           </HStack>
         </Stack>

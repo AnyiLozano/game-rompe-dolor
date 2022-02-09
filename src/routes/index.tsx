@@ -151,7 +151,7 @@ const Routes = () => {
             name: "Felicitacionesintentar",
             component: Felicitacionesintentar,
             param: { level: 1 }
-        },
+        },   
         {
             name: "Gameover",
             component: Gameover,
@@ -185,7 +185,7 @@ const Routes = () => {
 
     return (
         <NavigationContainer>
-            <Stack.Navigator screenOptions={{ headerShown: false }} initialRouteName={token ? "Levels3" : "Login"}>
+            <Stack.Navigator screenOptions={{ headerShown: false }} initialRouteName={token ? "Welcome" : "Home"}>
                 {
                     _.map(routes, (item: any, index: number) => {
                         return (

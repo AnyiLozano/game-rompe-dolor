@@ -10,34 +10,11 @@ const Calificanos: FC<{navigation: any}> = ({navigation}) => {
   const [showTwo, setShowTwo] = useState<boolean>(false);
   const [showOne, setShowOne] = useState<boolean>(false);
 
-  // Lets
-  // let step: number = 1;
-
-  // Constants
-  // const changeSteps = useCallback(() => {
-  //     const i = setInterval(() => {
-  //         if (step === 1) {
-  //             setShowTree(true);
-  //             step++;
-  //         } else if (step === 2) {
-  //             step++;
-  //             setShowTwo(true);
-  //         } else if (step === 3) {
-  //             step++;
-  //             setShowOne(true);
-  //         } else {
-  //             clearInterval(i);
-  //             navigation.navigate("Vamos");
-  //         }
-  //     }, 1000)
-  // }, [step]);
-
-  // Effects
-  // useEffect(() => {
-  //     changeSteps();
-  // }, [changeSteps]);
-
-  // // Components
+  /** Controllers */
+  const { useScreenHooks } = useControllers();
+  const { useWelcome } = useScreenHooks();
+  const { setSatisfaction } = useWelcome();
+  /** Components */
   const {Navigation} = useComponents();
 
   return (
@@ -64,7 +41,7 @@ const Calificanos: FC<{navigation: any}> = ({navigation}) => {
           <HStack display="flex">
             <View 
               onStartShouldSetResponder={() => true}
-              onResponderStart={() => navigation.navigate('AlertCalificacion')}
+              onResponderStart={() => setSatisfaction(1)}
             >
               <Image
                 source={require('../../assets/images/califica2.png')}
@@ -74,7 +51,7 @@ const Calificanos: FC<{navigation: any}> = ({navigation}) => {
             </View>
             <View 
              onStartShouldSetResponder={() => true}
-             onResponderStart={() => navigation.navigate('AlertCalificacion2')}
+             onResponderStart={() => setSatisfaction(2)}
             >
               <Image
                 source={require('../../assets/images/califica3.png')}
@@ -85,7 +62,7 @@ const Calificanos: FC<{navigation: any}> = ({navigation}) => {
             <View
             
             onStartShouldSetResponder={() => true}
-            onResponderStart={() => navigation.navigate('AlertCalificacion3')}>
+            onResponderStart={() => setSatisfaction(3)}>
               <Image
                 source={require('../../assets/images/califica4.png')}
                 alt="Welcome's Image"

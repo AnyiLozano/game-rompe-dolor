@@ -5,6 +5,7 @@ import {Animated, ImageBackground} from 'react-native';
 import useControllers from '../../controllers';
 import useComponents from '../../components';
 import Bubble from '../../components/Bubbles';
+import Alert3 from '../../components/AlertsLevel3';
 
 const Level3 = () => {
   /** Controllers */
@@ -36,36 +37,29 @@ const Level3 = () => {
       <React.Fragment>
         {index === 1 && (
           <Image
-            source={require('../../assets/images/RedBody.png')}
+            source={require('../../assets/images/verde.png')}
             alt="Red Capsule"
             style={Level3Styles.body}
           />
         )}
         {index === 2 && (
           <Image
-            source={require('../../assets/images/RedYellow.png')}
+            source={require('../../assets/images/rosado.png')}
             alt="Yellow Capsule"
             style={Level3Styles.body}
           />
         )}
         {index === 3 && (
           <Image
-            source={require('../../assets/images/Blue1.png')}
+            source={require('../../assets/images/naranja.png')}
             alt="Red Capsule"
             style={Level3Styles.body}
           />
         )}
         {index === 4 && (
           <Image
-            source={require('../../assets/images/Morado2.png')}
+            source={require('../../assets/images/cafe1.png')}
             alt="Yellow Capsule"
-            style={Level3Styles.body}
-          />
-        )}
-        {index === 5 && (
-          <Image
-            source={require('../../assets/images/Verde1.png')}
-            alt="Red Capsule"
             style={Level3Styles.body}
           />
         )}
@@ -307,7 +301,7 @@ const Level3 = () => {
         <Text
           style={Level3Styles.guns}>{`${guns} | Tiros \n Disponibles`}</Text>
       </View>
-      <Alert
+      <Alert3
         number={guns}
         onPress={handleAccept}
         style={{

@@ -25,6 +25,11 @@ const useLoginActions = () => {
                 data.fullname = user.fullname;
 
                 dispatch({
+                    type: "SET_LEVELS",
+                    payload: data.levels
+                });
+
+                dispatch({
                     type: LOGIN,
                     payload: data
                 });

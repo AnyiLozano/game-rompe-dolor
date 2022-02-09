@@ -3,14 +3,17 @@ import useTestReducers from "./test";
 import useLoginReducers from './login';
 
 const useReducers = () => {
-    //Reducers
+    /** Test Reducers */
     const { test } = useTestReducers();
-    const { login } = useLoginReducers();
+
+    /** Login Reducers */
+    const { login, levels } = useLoginReducers();
 
     return combineReducers(
         Object.assign({
             test,
-            login
+            login,
+            levels
         })
     );
 };

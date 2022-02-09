@@ -1,6 +1,6 @@
 import {useNavigation} from '@react-navigation/native';
 import _ from 'lodash';
-import {useRef, useState} from 'react';
+import {useEffect, useRef, useState} from 'react';
 import {Animated} from 'react-native';
 import {IUseNavigation} from '../../../models/interfaces/routes';
 import {Level1, capsuleToShooting} from './LevelsOrder';
@@ -149,6 +149,20 @@ const useGame = () => {
       }
     }
   };
+
+  useEffect(() => {
+    let newCapsules : any = []
+    _.map(capsules, (item: any) => {
+      _.map(item, (itm: any) => {
+        if(itm.state > 0){
+          itm.visible = true;
+        }
+      })
+
+      newCapsules.push(item);
+    })
+    setCapsules(newCapsules)
+  }, [])
 
   return {
     capsules,
