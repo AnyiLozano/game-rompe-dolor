@@ -84,7 +84,7 @@ const Welcome: FC = () => {
                     source={require('../../assets/images/Level3.png')}
                     alt="Welcome's Image"
                   />
-                </Button>
+                </Button>     
               )}
             </View>
           </HStack>
