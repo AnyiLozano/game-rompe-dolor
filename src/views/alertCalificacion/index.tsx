@@ -16,7 +16,7 @@ const AlertCalificacion: FC<IGeneralProps> = (props) => {
 
     const { navigation } = props;
 
-    // Components
+    // Components     
     const { Navigation } = useComponents();
 
     // Controller
